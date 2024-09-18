@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="Style.css">
+  <title>Document</title>
+</head>
+<body>
+
+  <header></header>
+  
+  <form id="form" action="config.php" method="get">
+    <div id="inputs">
+      <label>Materia</label>
+      <input type="text" name="Materia[]" placeholder="Materia">
+      <label>Nota</label>
+      <input type="number" name="Nota[]" placeholder="Nota"/>
+    </div>
+    <div class="btn">
+      <button type="button" onclick="addFields()">Incluir Materia</button>
+      <button type="submit">Finalizar</button>
+    </div>
+  </form>
+  
+  <footer></footer>
+
+  <script>
+    function addFields() {
+      const container = document.getElementById('inputs');
+      const newField = document.createElement('div');
+      newField.innerHTML = `
+        <label>Materia</label>
+        <input type="text" name="Materia[]" placeholder="Materia">
+        <label>Nota</label>
+        <input type="number" name="Nota[]" placeholder="Nota"/>
+      `;
+      container.appendChild(newField);
+    }
+  </script>
+
+</body>
+</html>
